@@ -1,0 +1,12 @@
+mediacloud
+pandas
+matplotlib
+python-dotenv
+wordcloud
+nltk_data
+SentencePiece
+tiktoken
+protobuf
+soupsieve
+beautifulsoup4
+deep-translator

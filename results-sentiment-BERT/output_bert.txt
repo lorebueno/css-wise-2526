@@ -1,0 +1,113 @@
+********************* 📅 Starting sentiment analysis - 2026-03-21 21:07:33 **********************
+
+✅ Loaded 1000 articles
+
+🌍 Detecting languages...
+language       af  ca  da   de   en   es  et  fr  it  nl  no   pt  ro  sl  sv  vi
+region                                                                           
+Europe          1   3   0  101  100    0   1  36   0   1   1    4   1   0   1   0
+Latin_America   0   4   0    0    4  136   0   1   2   0   0  101   0   0   0   2
+US              0   1   1   13  208   17   1   0   4   1   1    2   1   0   0   0
+Venezuela       0   3   0    0   12  230   0   0   1   0   1    2   0   1   0   0
+
+🔄 Translating Spanish/Portuguese/German/French titles to English for NRC analysis...
+✅ Translation complete!
+
+🤗 Running multilingual sentiment analysis NLP Town...
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:00<00:00, 7368.01it/s]
+
+📊 BERT Sentiment breakdown by region:
+sentiment      negative  neutral  positive
+region                                    
+Europe              162       14        74
+Latin_America       167       12        71
+US                  152       10        88
+Venezuela           160        8        82
+
+😡 Running NRC emotion analysis...
+
+😤 Average emotion scores by region:
+               anger   fear    joy  trust  sadness  surprise  disgust  anticipation
+region                                                                             
+Europe         0.304  0.420  0.140  0.428    0.196     0.656    0.116         0.272
+Latin_America  0.288  0.524  0.172  0.416    0.240     0.720    0.092         0.256
+US             0.456  0.616  0.080  0.532    0.168     0.508    0.164         0.208
+Venezuela      0.192  0.304  0.168  0.528    0.100     0.908    0.088         0.272
+
+🔤 Running bigram framing analysis...
+
+🔤 Top bigrams by region:
+
+  Venezuela:
+    donald trump: 20
+    oil companies: 14
+    trump says: 13
+    venezuelan oil: 12
+    trump announces: 11
+    attacks venezuela: 10
+    actions venezuela: 10
+    corina machado: 9
+    responsibility training: 9
+    training bonus: 9
+
+  US:
+    trump says: 28
+    run venezuela: 25
+    capture maduro: 21
+    nicolás maduro: 20
+    maduro capture: 20
+    says run: 13
+    maduro wife: 12
+    new york: 12
+    strikes venezuela: 11
+    attack venezuela: 11
+
+  Latin_America:
+    venezuelan oil: 21
+    donald trump: 19
+    united states: 12
+    oil revenues: 12
+    protect venezuelan: 12
+    national emergency: 10
+    political prisoners: 9
+    trump signs: 9
+    maduro capture: 8
+    oil companies: 7
+
+  Europe:
+    donald trump: 37
+    oil companies: 15
+    invest venezuela: 12
+    companies invest: 10
+    german entrepreneur: 7
+    venezuelan oil: 7
+    venezuela greenland: 7
+    greenland ukraine: 7
+    merz crisis: 7
+    crisis mode: 7
+
+📑 Running LDA topic modeling...
+
+📑 Top topics per region (LDA):
+
+  Venezuela:
+    Topic 1: trump, oil, venezuela, venezuelan, companies
+    Topic 2: trump, venezuela, senate, attacks, military
+    Topic 3: trump, petro, maduro, meet, president
+
+  US:
+    Topic 1: maduro, venezuela, trump, capture, nicolás
+    Topic 2: venezuela, trump, says, run, maduro
+    Topic 3: maduro, venezuela, new, capture, york
+
+  Latin_America:
+    Topic 1: trump, venezuela, maduro, oil, capture
+    Topic 2: trump, venezuela, venezuelan, oil, emergency
+    Topic 3: trump, political, petro, venezuela, prisoners
+
+  Europe:
+    Topic 1: trump, venezuela, oil, companies, invest
+    Topic 2: trump, donald, venezuela, oil, attack
+    Topic 3: venezuela, greenland, crisis, germany, maduro
+
+✅ All analysis complete! Saved to articles_with_sentiment.csv

@@ -1,0 +1,138 @@
+********************* 📅 Starting sentiment analysis - 2026-03-21 20:53:45 **********************
+
+✅ Loaded 1000 articles
+
+🌍 Detecting languages...
+language       af  ca   de   en   es  et  fr  it  lt  nl  no   pt  ro  sl  sv  vi
+region                                                                           
+Europe          2   1  101  100    0   0  37   0   1   1   1    5   0   0   1   0
+Latin_America   0   3    0    4  133   0   1   2   0   0   0  105   0   0   0   2
+US              0   1   14  209   16   1   0   4   0   1   0    3   1   0   0   0
+Venezuela       0   3    0   12  230   0   0   1   0   0   1    2   0   1   0   0
+
+🔄 Translating Spanish/Portuguese/German/French titles to English for NRC analysis...
+✅ Translation complete!
+
+🤗 Running multilingual sentiment analysis Cardiff NLP...
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:00<00:00, 56429.39it/s]
+XLMRobertaForSequenceClassification LOAD REPORT from: cardiffnlp/twitter-xlm-roberta-base-sentiment
+Key                             | Status     |  | 
+--------------------------------+------------+--+-
+roberta.embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+📊 XLM-Roberta Sentiment breakdown by region:
+sentiment      negative  neutral  positive
+region                                    
+Europe              137       99        14
+Latin_America       131       97        22
+US                  153       85        12
+Venezuela            82      153        15
+
+😡 Running NRC emotion analysis...
+
+😤 Average emotion scores by region:
+               anger   fear    joy  trust  sadness  surprise  disgust  anticipation
+region                                                                             
+Europe         0.300  0.424  0.144  0.424    0.200     0.660    0.116         0.276
+Latin_America  0.288  0.520  0.172  0.416    0.240     0.720    0.092         0.256
+US             0.456  0.616  0.080  0.532    0.168     0.508    0.164         0.204
+Venezuela      0.192  0.304  0.168  0.528    0.100     0.908    0.088         0.272
+
+🔤 Running bigram framing analysis...
+
+🔤 Top bigrams by region:
+
+  Venezuela:
+    donald trump: 20
+    oil companies: 14
+    trump says: 13
+    venezuelan oil: 12
+    trump announces: 11
+    attacks venezuela: 10
+    actions venezuela: 10
+    corina machado: 9
+    responsibility training: 9
+    training bonus: 9
+
+  US:
+    trump says: 28
+    run venezuela: 25
+    capture maduro: 21
+    nicolás maduro: 20
+    maduro capture: 20
+    says run: 13
+    maduro wife: 13
+    new york: 12
+    strikes venezuela: 11
+    attack venezuela: 11
+
+  Latin_America:
+    venezuelan oil: 21
+    donald trump: 19
+    united states: 12
+    oil revenues: 12
+    protect venezuelan: 12
+    national emergency: 10
+    political prisoners: 9
+    trump signs: 9
+    maduro capture: 8
+    oil companies: 7
+
+  Europe:
+    donald trump: 37
+    oil companies: 15
+    invest venezuela: 13
+    companies invest: 10
+    german entrepreneur: 7
+    venezuelan oil: 7
+    venezuela greenland: 7
+    greenland ukraine: 7
+    merz crisis: 7
+    crisis mode: 7
+
+📑 Running LDA topic modeling...
+
+📑 Top topics per region (LDA):
+
+  Venezuela:
+    Topic 1: trump, oil, venezuela, venezuelan, companies
+    Topic 2: trump, venezuela, senate, attacks, military
+    Topic 3: trump, petro, maduro, meet, president
+
+  US:
+    Topic 1: maduro, venezuela, capture, trump, president
+    Topic 2: venezuela, trump, says, maduro, run
+    Topic 3: maduro, venezuela, trump, capture, captured
+
+  Latin_America:
+    Topic 1: trump, maduro, venezuela, petro, transition
+    Topic 2: trump, oil, venezuelan, venezuela, protect
+    Topic 3: trump, venezuela, maduro, says, oil
+
+  Europe:
+    Topic 1: trump, venezuela, oil, donald, companies
+    Topic 2: trump, maduro, donald, venezuela, oil
+    Topic 3: trump, greenland, venezuela, crisis, germany
+
+✅ All analysis complete! Saved to articles_with_sentiment.csv
+(venv) lbueno@Mac css_news_sentiment % /Users/lbueno/Documents/css_news_sentiment/venv/bin/python /Users/lbueno/Documents/css_news_sentiment/3_visualize.py
+📊 Building visualizations...
+  ✅ chart_sentiment.png
+  ✅ chart_emotions_radar.png
+  ✅ chart_emotions_heatmap.png
+  ✅ chart_bigrams.png
+  ✅ chart_lda_topics.png
+
+🎉 All charts saved!
+  → chart_sentiment.png
+  → chart_emotions_radar.png
+  → chart_emotions_heatmap.png
+  → chart_bigrams.png
+  → chart_lda_topics.png
+
+☁️  Generating word clouds...
+  ✅ chart_wordclouds.png
