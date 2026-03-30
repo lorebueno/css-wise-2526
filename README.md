@@ -1,4 +1,4 @@
-# Framing and Sentiment Analysis of News on US Intervention in Venezuela
+# Framing and Sentiment Analysis of Headlines on US Intervention in Venezuela
 
 A computational text analysis project examining how news headlines about US intervention on Venezuela are framed across different regional media outlets, using sentiment analysis and topic modeling.
 
@@ -9,9 +9,20 @@ This project collects and analyzes news headlines related to the U.S.–Venezuel
 ## Research Goals
 
 - Compare sentiment polarity in news coverage across four regional outlets
-- Identify dominant emotions using the NRC Emotion Lexicon
+- Sentiment analysis: model-based sentiment scoring
+- Computational goals: comparative of results for two NLP models trained for multilingual purposes
+- Emotional analysis: identify dominant emotions using the NRC Emotion Lexicon tone classification.
 - Extract recurring topics through bigram analysis and LDA topic modeling
 - Visualize regional differences in framing and language use
+
+
+## Expected Contributions
+
+This study contributes to computational social science by:
+- Demonstrating how linguistic framing can be operationalized and quantified.
+- Highlighting ideological differences in political discourse.
+- Providing a reproducible, transparent pipeline for analyzing contested political narratives.
+- Providing a comparison of 2 different NLP models for sentiment analysis on multilingual datasets.
 
 ## Project Structure
 ```
@@ -20,7 +31,6 @@ css_news_sentiment/
 ├── 2_analyze_sentiment.py    # Sentiment analysis (BERT, XLM)
 ├── 3_visualize.py            # Charts and heatmaps
 ├── 4_wordclouds.py           # Word cloud generation
-├── main.py                   # Main pipeline
 ├── articles.csv              # Raw collected articles
 ├── articles by region/       # CSVs split by region
 ├── results-sentiment-BERT/   # BERT sentiment results
@@ -72,7 +82,8 @@ python 4_wordclouds.py
 
 ## Author
 
-**Lore Bueno** · Matrikel-Nummer: 12835250  
-Master's in Statistics and Data Science
+**Lore Bueno** · Matrikel-Nummer: 12835250
+Ludwig-Maximilians-Universität - LMU
+Statistics and Data Science Master's Program
 Computational Social Science  - WISE 25/26
 GitHub: [@lorebueno](https://github.com/lorebueno)

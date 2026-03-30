@@ -113,7 +113,7 @@ stop_de = set(stopwords.words('german'))
 stop_fr = set(stopwords.words('french'))
 all_stopwords = stop_en | stop_es | stop_de | stop_fr
 
-def get_bigrams(texts, top_n=8):
+def get_bigrams(texts, top_n=10):
     words_list = []
     for text in texts:
         words = re.findall(r'\b\w+\b', str(text).lower())
@@ -138,7 +138,7 @@ for idx, region in enumerate(REGIONS):
     for i, v in enumerate(values):
         axes[idx].text(v + 0.05, i, str(v), va='center', fontsize=9)
 
-fig.suptitle('Top Bigrams by Region - Framing Analysis \n (translated to English)',
+fig.suptitle('Top 10 Bigrams by Region - Framing Analysis \n (translated to English)',
              fontsize=14, fontweight='bold')
 plt.tight_layout()
 plt.savefig('chart_bigrams.png', dpi=150)
@@ -162,7 +162,7 @@ for idx, region in enumerate(REGIONS):
     X = vectorizer.fit_transform(region_titles)
     feature_names = vectorizer.get_feature_names_out()
 
-    lda = LatentDirichletAllocation(n_components=3, random_state=42)
+    lda = LatentDirichletAllocation(n_components=5, random_state=42)
     lda.fit(X)
 
     topic_data = []
